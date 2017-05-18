@@ -29,20 +29,20 @@ module.exports = function(robot) {
   });
 
 var sloths;
-sloths = ["http://img.skitch.com/20100714-d6q52xajfh4cimxr3888yb77ru.jpg", "https://img.skitch.com/20111026-r2wsngtu4jftwxmsytdke6arwd.png", "http://cl.ly/1i0s1r3t2s2G3P1N3t3M/Screen_Shot_2011-10-27_at_9.36.45_AM.png", "http://shipitsquirrel.github.com/images/squirrel.png"];
+sloths = ["http://kids.nationalgeographic.com/content/dam/kids/photos/animals/Mammals/Q-Z/sloth-beach-upside-down.adapt.945.1.jpg", "http://kids.nationalgeographic.com/content/dam/kids/photos/animals/Mammals/Q-Z/photoak-threetoedsloth.ngsversion.1465391618565.png"];
 
 return robot.hear(/faultier/i, function(msg) {
     return msg.send(msg.random(sloths));
   });
 
-robot.respond(/Hallo Hubot! Mein Name ist (.*)/i, function(msg) {
-  var name;
-  name = msg.match[1];
-  if (name == "Hubot"){
-    return msg.send("You're not Hubot--I'm Hubot!");
-  } else {
-    return msg.reply("Nice to meet you, " + name + "!");
-  }
+robot.respond(/open the (.*) doors/i, function(res) {
+    var doorType = res.match[1];
+    if (doorType = ("pod bay")) {
+      return msg.reply ("I'm afraid I can't let you do that.");
+    }
+    else {
+      res.reply("Opening #{doorType} doors");
+    }
 });
 
 }
