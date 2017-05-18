@@ -19,12 +19,22 @@
 //
 
 module.exports = function(robot) {
-  robot.hear(/Biergarten/i, function(msg) {
+
+  robot.hear(/biergarten/i, function(msg) {
        return msg.send("I love beer gardens!");
    });
+
   return robot.respond(/servus|hallo/i, function(msg) {
-    return msg.send("Almachd naa!");
+    return msg.send("Almächd naa!");
   });
+
+  var sloths;
+   sloths = ["http://kids.nationalgeographic.com/content/dam/kids/photos/animals/Mammals/Q-Z/sloth-beach-upside-down.adapt.945.1.jpg"];
+  return robot.hear(/faulpelz/i, function(msg) {
+    return msg.send(msg.random(sloths));
+  });
+
+
 }
 
 /************************************
@@ -57,3 +67,4 @@ module.exports = function(robot) {
   });
 };
 */
+
