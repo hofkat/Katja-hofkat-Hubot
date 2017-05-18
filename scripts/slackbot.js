@@ -31,8 +31,7 @@ module.exports = function(robot) {
 
    return robot.hear(/faulpelz/i, function(msg) {
     var sloths;
-    sloths = ["http://kids.nationalgeographic.com/content/dam/kids/photos/animals/Mammals/Q-Z/sloth-beach-upside-down.adapt.945.1.jpg","http://img.skitch.com/20100714-d6q52xajfh4cimxr3888yb77ru.jpg"];
- 
+    sloths = [1,2,3];
     return msg.send(msg.random(sloths));
   });
 
