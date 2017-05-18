@@ -22,6 +22,9 @@ module.exports = function(robot) {
   robot.hear(/Biergarten/i, function(msg) {
        return msg.send("I love beer gardens!");
    });
+  return robot.respond(/servus|hallo/i, function(msg) {
+    return msg.send("Almachd naa!");
+  });
 }
 
 /************************************
