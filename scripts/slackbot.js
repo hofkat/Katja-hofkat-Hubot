@@ -36,7 +36,7 @@ return robot.hear(/faultier/i, function(msg) {
   });
 
 robot.respond(/open the (.*) doors/i, function(msg) {
-    var doorType = msg.match[1];
+    var doorType = msg.match[0];
     if (doorType = ("pod bay")) {
       return msg.reply("I'm afraid I can't let you do that.");
     }
