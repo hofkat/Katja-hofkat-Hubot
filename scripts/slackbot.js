@@ -35,7 +35,7 @@ return robot.hear(/faultier/i, function(msg) {
     return msg.send(msg.random(sloths));
   });
 
-bot.respond(/Hallo Hubot! Mein Name ist (.*)/i, function(msg) {
+robot.respond(/Hallo Hubot! Mein Name ist (.*)/i, function(msg) {
   var name;
   name = msg.match[1];
   if (name == "Hubot"){
