@@ -24,7 +24,7 @@ module.exports = function(robot) {
        return msg.send("I love beer gardens!");
    });
 
-  return robot.respond(/servus|hallo/i, function(msg) {
+   robot.respond(/servus|hallo/i, function(msg) {
     return msg.send("Almächd naa!");
   });
 
