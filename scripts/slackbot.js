@@ -46,6 +46,7 @@ robot.respond(/open the (.*) doors/i, function(msg) {
     }
 });
 
+}
 
 /************************************
 
