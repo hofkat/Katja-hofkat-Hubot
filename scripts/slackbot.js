@@ -35,6 +35,11 @@ return robot.hear(/sloth/i, function(msg) {
     return msg.send(msg.random(sloths));
   });
 
+robot.respond(/is there anybody out there/i, function(msg) {
+      return msg.send("Yep, listening.");
+};)
+
+
 robot.respond(/open the (.*) doors/i, function(msg) {
     var doorType; 
     doorType = msg.match[0];
