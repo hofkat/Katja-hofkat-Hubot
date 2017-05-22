@@ -25,7 +25,7 @@ module.exports = function(robot) {
    });
 
 
-   robot.respond(/servus|hallo/i, function(msg) {
+  robot.respond(/servus|hallo/i, function(msg) {
     return msg.send("Almächd naa!");
   });
 
@@ -36,19 +36,18 @@ module.exports = function(robot) {
     return msg.send(msg.random(sloths));
   });
 
-
-/*
-robot.respond(/open the (.*) doors/i, function(msg) {
-    var doorType; 
-    doorType = msg.match[0];
-    if (doorType === "pod bay") {
-      return msg.send("I'm afraid I can't let you do that.");
+  var job;
+  robot.respond(/when i grow up i want to be a (.*)/i, function(msg) {
+    
+    job = msg.match[1];
+    if (job === "javascript developer") {
+      return msg.send("Great idea!");
     }
     else {
-      return msg.reply("Opening " + doorType + " doors");
+      return msg.reply("But" + job + "s don't make any money!");
     }
-});
-*/
+  });
+
 
 }
 
