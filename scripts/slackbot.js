@@ -20,7 +20,7 @@
 
 module.exports = function(robot) {
 
-  robot.hear(/biergarten/i, function(msg) {
+  robot.hear(/beer garden/i, function(msg) {
        return msg.send("I love beer gardens!");
    });
 
@@ -31,7 +31,7 @@ module.exports = function(robot) {
 var sloths;
 sloths = ["http://kids.nationalgeographic.com/content/dam/kids/photos/animals/Mammals/Q-Z/sloth-beach-upside-down.adapt.945.1.jpg", "http://kids.nationalgeographic.com/content/dam/kids/photos/animals/Mammals/Q-Z/photoak-threetoedsloth.ngsversion.1465391618565.png"];
 
-return robot.hear(/faultier/i, function(msg) {
+return robot.hear(/sloth/i, function(msg) {
     return msg.send(msg.random(sloths));
   });
 
