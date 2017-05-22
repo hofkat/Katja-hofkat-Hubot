@@ -36,9 +36,9 @@ module.exports = function(robot) {
     return msg.send(msg.random(sloths));
   });
 
-  var job;
-  robot.respond(/when i grow up i want to be a (.*)/i, function(msg) {
-    
+  
+  robot.hear(/when i grow up i want to be a (.*)/i, function(msg) {
+    var job;
     job = msg.match[1];
     if (job === "javascript developer") {
       return msg.send("Great idea!");
