@@ -21,25 +21,23 @@
 module.exports = function(robot) {
 
   robot.hear(/beer garden/i, function(msg) {
-       return msg.send("I love beer gardens!");
+    return msg.send("I love beer gardens!");
    });
+
 
    robot.respond(/servus|hallo/i, function(msg) {
     return msg.send("Almächd naa!");
   });
 
-var sloths;
-sloths = ["http://kids.nationalgeographic.com/content/dam/kids/photos/animals/Mammals/Q-Z/sloth-beach-upside-down.adapt.945.1.jpg", "http://kids.nationalgeographic.com/content/dam/kids/photos/animals/Mammals/Q-Z/photoak-threetoedsloth.ngsversion.1465391618565.png", "https://s-media-cache-ak0.pinimg.com/originals/56/bb/3a/56bb3acb80214ff1ed6cf989593dbe68.jpg"];
 
-return robot.hear(/sloth/i, function(msg) {
+  var sloths;
+  sloths = ["http://kids.nationalgeographic.com/content/dam/kids/photos/animals/Mammals/Q-Z/sloth-beach-upside-down.adapt.945.1.jpg", "http://kids.nationalgeographic.com/content/dam/kids/photos/animals/Mammals/Q-Z/photoak-threetoedsloth.ngsversion.1465391618565.png", "https://s-media-cache-ak0.pinimg.com/originals/56/bb/3a/56bb3acb80214ff1ed6cf989593dbe68.jpg"];
+    return robot.hear(/sloth/i, function(msg) {
     return msg.send(msg.random(sloths));
   });
 
-robot.respond(/is there anybody out there/i, function(msg) {
-      return msg.send("Yep, listening.");
-};)
 
-
+/*
 robot.respond(/open the (.*) doors/i, function(msg) {
     var doorType; 
     doorType = msg.match[0];
@@ -50,6 +48,7 @@ robot.respond(/open the (.*) doors/i, function(msg) {
       return msg.reply("Opening " + doorType + " doors");
     }
 });
+*/
 
 }
 
