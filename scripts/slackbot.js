@@ -29,23 +29,23 @@ module.exports = function(robot) {
   });
 
 var sloths;
-sloths = ["http://kids.nationalgeographic.com/content/dam/kids/photos/animals/Mammals/Q-Z/sloth-beach-upside-down.adapt.945.1.jpg", "http://kids.nationalgeographic.com/content/dam/kids/photos/animals/Mammals/Q-Z/photoak-threetoedsloth.ngsversion.1465391618565.png"];
+sloths = ["http://kids.nationalgeographic.com/content/dam/kids/photos/animals/Mammals/Q-Z/sloth-beach-upside-down.adapt.945.1.jpg", "http://kids.nationalgeographic.com/content/dam/kids/photos/animals/Mammals/Q-Z/photoak-threetoedsloth.ngsversion.1465391618565.png", "https://s-media-cache-ak0.pinimg.com/originals/56/bb/3a/56bb3acb80214ff1ed6cf989593dbe68.jpg"];
 
 return robot.hear(/sloth/i, function(msg) {
     return msg.send(msg.random(sloths));
   });
 
 robot.respond(/open the (.*) doors/i, function(msg) {
-    var doorType = msg.match[0];
-    if (doorType = ("pod bay")) {
-      return msg.reply("I'm afraid I can't let you do that.");
+    var doorType; 
+    doorType = msg.match[1];
+    if (doorType === "pod bay") {
+      return msg.send("I'm afraid I can't let you do that.");
     }
     else {
-      msg.reply("Opening #{doorType} doors");
+      return msg.reply("Opening " + doorType + " doors");
     }
 });
 
-}
 
 /************************************
 
